@@ -1,0 +1,14 @@
+---
+- name: lab 3
+  hosts: srv-test1
+  tasks: 
+    - name: install nmap
+      package:
+        name: nmap
+        state: present
+     #tags: nmap
+    - name: create archive
+      archive:
+        path: /home
+        dest: /tmp/home.tar.bz2
+        format: bz2 

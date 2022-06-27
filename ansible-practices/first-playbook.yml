@@ -1,0 +1,16 @@
+- name: first play
+  hosts: srv-test1
+  tasks:
+    - name: create a new file
+      file:
+        path: /tmp/foo.conf
+        mode: 0664
+        owner: alexchocho
+        state: touch
+    - name: create groups from other playbook
+      import_tasks: group-tasks.yml 
+    - name: install git
+      package:
+        name: git
+        state: present
+      tags: git

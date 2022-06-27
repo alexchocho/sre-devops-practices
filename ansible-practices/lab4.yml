@@ -1,0 +1,17 @@
+---
+- name: lab4
+  hosts: all
+  tasks:
+    - name: Mostrar consumo de memoria
+      command: free -h
+      register: freemem
+
+    - name: inspect variable
+      debug:
+        msg: "{{ freemem.stdout }}"
+
+    - name: show all ipv4
+      debug:
+        msg: "{{ ansible_facts.default_ipv4.address }}"
+
+    

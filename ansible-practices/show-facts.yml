@@ -1,0 +1,13 @@
+---
+- name: show some facts
+  hosts: all
+  tasks:
+    - name: display srv-test1 ipv4
+      debug:
+        msg: IPv4 address is {{ ansible_facts.default_ipv4.address }}
+    - name: display srv-test1 fqdn
+      debug:
+        msg: FQDN is {{ ansible_facts.fqdn }}
+    - name: display srv-test1 OS distribution
+      debug:
+        msg: Os Distro is {{ ansible_facts.distribution }}

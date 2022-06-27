@@ -1,0 +1,4 @@
+- name: create a developers group
+  group:
+    name: developers
+& 
