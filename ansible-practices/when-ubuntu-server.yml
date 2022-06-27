@@ -1,0 +1,10 @@
+---
+- name: Usando when con facts
+  hosts: all
+  vars:
+    servidor: "prueba"
+  tasks:
+    - name: Detectar Servidores Ubuntu
+      debug:
+        msg: El servidor {{ ansible_hostname }} tiene Ubuntu Instalado
+      when: ansible_facts['distribution'] == "Ubuntu"
