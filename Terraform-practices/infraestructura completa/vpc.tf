@@ -16,8 +16,8 @@ resource "aws_subnet" "public" {
     vpc_id = aws_vpc.vpc_deploy.id
     count = length(data.aws_availability_zones.available.zone_ids)
     cidr_block = cidrsubnet(var.cidr, 4, 0 + count.index)
-    map_public_ip_on_launch = false
-    availability_zone = element(data.aws_availability_zones.available.names, count.index)
+    map_public_ip_on_launch = true
+        availability_zone = element(data.aws_availability_zones.available.names, count.index)
     tags = {
       Name = "public-network-${count.index}"
     }
