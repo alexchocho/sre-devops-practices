@@ -5,5 +5,5 @@ variable "cidr" {
 
 variable "ssh_pub_path" {
   description = "SSH Key file directory"
-  default = "you_path/public.pub"
+  default = "your_path/public.pub"
 }
