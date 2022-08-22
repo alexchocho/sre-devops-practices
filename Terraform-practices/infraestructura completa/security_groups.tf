@@ -27,7 +27,7 @@ resource "aws_security_group" "webserver" {
   name = "webserver"
   description = "Security group for WebServer"
   vpc_id = aws_vpc.vpc_deploy.id
-  tags {
+  tags = {
     Name = "Web Server"
   }
 }
